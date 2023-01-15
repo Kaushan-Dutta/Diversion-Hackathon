@@ -1,0 +1,133 @@
+.organization {
+    max-width: 1000px;
+    box-shadow: 2px 2px 5px grey;
+    border-radius: 5px;
+    height: 570px;
+    background-color: rgb(51, 227, 139);
+}
+
+.organization .mint-image {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.organization .mint-image img {
+    height: 300px;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px grey;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+.organization .mint-image img:hover {
+    transform: scale(1.04);
+}
+
+.organization .contents .raised-amount {
+    display: flex;
+    justify-content: center;
+}
+
+.organization .contents .raised-amount span {
+    background-color: aquamarine;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px grey;
+}
+
+.organization .contents .interact-contract {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.organization .contents .interact-contract .donate-fund {
+    background-color: aquamarine;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px grey;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width:800px) {
+    .organization .contents .interact-contract .donate-fund {
+
+        width: 60%
+    }
+    .organization .mint-image img:nth-child(1){
+        display: none;
+    }
+    .organization .mint-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .organization .contents .interact-contract {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column
+    }
+    .organization .contents .interact-contract .donate-fund {
+        width: 100%;
+    }
+    .organization {
+ 
+        height: 100%;}
+   
+
+}
+
+@media screen and (max-width:1500px) {
+    .organization .mint-image img {
+        height: 250px;
+
+    }
+}
+
+@media screen and (max-width:1300px) {
+    .organization .mint-image img {
+        height: 200px;
+
+    }
+}
+
+@media screen and (max-width:1200px) {
+
+    .organization {
+        width: 100%;
+    }
+
+    .organization .mint-image img {
+        height: 250px;
+
+    }
+}
+
+@media screen and (max-width:950px) {
+    .organization .mint-image img {
+        height: 200px;
+
+    }
+}
+
+.organization .contents .interact-contract .donate-fund input {
+    border: none;
+    height: 30px;
+    width: 70%;
+    outline: none;
+    background-color: aquamarine;
+}
+
+.organization .contents .interact-contract .withdraw button {
+    background-color: aquamarine;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px grey;
+    border: none;
+
+    width: 200px;
+}

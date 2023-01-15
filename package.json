@@ -4,16 +4,20 @@
   "private": true,
   "dependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "@openzeppelin/contracts": "^4.8.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "chai": "^4.3.7",
     "dotenv": "^16.0.3",
     "ethers": "^5.7.2",
     "hardhat": "^2.12.5",
+    "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^4.0.3",
+    "url": "^0.11.0",
     "web-vitals": "^2.1.4",
     "web3": "^1.8.1",
     "web3-token": "^1.0.4"
@@ -43,7 +47,9 @@
     ]
   },
   "devDependencies": {
-    "tailwindcss": "^3.2.4"
+    "autoprefixer": "^9.8.8",
+    "postcss": "^8.4.21",
+    "webpack-node-externals": "^3.0.0"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",

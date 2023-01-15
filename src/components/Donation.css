@@ -1,0 +1,41 @@
+.donation{
+    width: 350px;
+    box-shadow: 2px 2px 5px grey;
+    text-align: center;
+    background-color: rgb(163, 221, 56);
+    height: 570px;
+    border-radius: 5px;
+}
+.donation {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+@media screen and (max-width:1200px) {
+    .donation{
+        width: 90%;}
+    
+}
+.donation::-webkit-scrollbar{
+    display: none;
+}
+
+.donation .transactions .transaction{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    
+}
+.donation span{
+    width: 100px;
+}
+.donation .heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.donation .transactions .transaction img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}

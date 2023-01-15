@@ -1,0 +1,11 @@
+.navbar .container{
+    background-color: rgb(4, 41, 78);
+    box-shadow: 2px 2px 5px  grey;
+    border-radius: 5px;
+    
+}
+.navbar .logo a{
+    font-family: 'Comfortaa', cursive;
+    color: azure;
+    font-size: 30px;
+}

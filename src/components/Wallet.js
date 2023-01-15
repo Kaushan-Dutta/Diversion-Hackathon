@@ -1,11 +1,15 @@
+
 import React,{useEffect,useState} from 'react';
 import Metamask from '../images/metamask.png';
 import { ethers } from 'ethers';
+import './Wallet.css';
+import Contract from '../artifacts/contracts/V3Fund.sol/V3Fund.json';
 
 
 const Wallet = (props) => {
   const [provider,setProvider]=useState(null);
   const [account,setAccount]=useState('');
+  const [contract,setContract]=useState(null);
   
   useEffect(()=>{
 
@@ -24,10 +28,14 @@ const Wallet = (props) => {
         }
        }
       const provider=new ethers.providers.Web3Provider(connected);
+
       const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
       const account = ethers.utils.getAddress(accounts[0]);
+      const signer=provider.getSigner();
+      const contract=new ethers.Contract(process.env.REACT_APP_CONTRACT_ADDRESS,Contract.abi,signer);
       setProvider(provider);
       setAccount(account);
+      setContract(contract);
 
     }
      
@@ -35,15 +43,15 @@ const Wallet = (props) => {
   },[]);
 
   useEffect(()=>{
-     props.setConnection({provider,account});
-  },[provider,account]);
+     props.setConnection({provider,account,contract});
+  },[provider,account,contract]);
 
   return (
     <>
-     <div className='h-screen w-screen place-content-center grid bg-slate-700'>
-      <div className='box max-w-sm rounded-md shadow-lg px-10 py-5 bg-slate-600  place-items-center grid'>
+     <div className='wallet'>
+      <div className='contents px-5 py-3 mx-5 '>
            <img src={Metamask} width="50px" style={{cursor:'pointer'}} className="text-center"/>
-           <h1 className='text-center text-2xl text-zinc-300 mt-3' style={{fontFamily:'Montserrat, sans-serif'}}>Connect your Metamask wallet to continue...</h1>
+           <p className=''>Connect your Metamask wallet to continue...</p>
            
       </div>
     </div>
@@ -52,4 +60,4 @@ const Wallet = (props) => {
   )
 }
 
-export default Wallet
+export default Wallet 

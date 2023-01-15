@@ -1,0 +1,14 @@
+.wallet{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+.wallet .contents{
+    width: 400px;
+    box-shadow: 2px 2px 5px grey;
+    background-color: aquamarine;
+    text-align: center;
+
+}

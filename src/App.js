@@ -14,10 +14,15 @@ function App() {
   const [wallet,setWallet]=useState(false);
   const [chain,setChain]=useState(false);
   const [account,setAccount]=useState('Not Connected');
-  function setConnection({provider,account}){
-    if(provider && account){
+  const [contract,setContract]=useState(null);
+  const [provider,setProvider]=useState(null);
+
+  function setConnection({provider,account,contract}){
+    if(provider && account && contract){
       setAccount(account);
       setWallet(true);
+      setContract(contract);
+      setProvider(provider);
     }
   }
   function getChain(networkId){
@@ -35,16 +40,16 @@ function App() {
     });
   })
   return (
-   <>
+   < div className='body'>
      <Navbar account={account}/>
      {
      wallet==false?<Wallet setConnection={setConnection}/>:chain==false?<Chain getChain={getChain}/>:
-     <div className='flex justify-between items-start px-20 pt-32'>
-      <Organization/>
-      <DonationList/>
+     <div className='crowd-fund px-5'>
+       <Organization account={account} provider={provider} contract={contract}/>
+       <DonationList account={account} provider={provider} contract={contract}/>
      </div>
     }
-   </>
+   </div>
   );
 }
 
