@@ -63,5 +63,6 @@ contract V3Fund is ERC721URIStorage,Ownable{
      function withdraw()public onlyOwner{
           payable(msg.sender).transfer(address(this).balance);
      }
+//the withdraw function will withdraw the total amount collected
      
 }
